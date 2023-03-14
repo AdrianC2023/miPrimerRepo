@@ -6,10 +6,13 @@ public class Carrito {
 //Atributos
     private Persona persona;
     private Producto[] tipoProducto;
-    private Double total = 0.0;
+    //private Double total;
+    private int cantProducto;
 
 //Constructor
     public Carrito(Persona persona) {
+        //this.total = 0.0;
+        this.cantProducto = 0;
         this.persona = persona;
         this.tipoProducto = new Producto[3];
     }
@@ -18,21 +21,21 @@ public class Carrito {
     public Persona getPersona() {
         return persona;
     }
-    public void agregarProducto(Producto producto) {
-
-        total = total + producto.getPrecio();
-       //for (int i=0; i<tipoProducto.length; i++) {
-            //tipoProducto[3] = producto;
-       //}
+    public boolean agregarProducto(Producto producto) {
+        if (cantProducto < 3) {
+            tipoProducto[cantProducto] = producto;
+            cantProducto++;
+            return true;
+        } else{
+            return false;
+        }
     }
 
     public Double importeTotal() {
         Double total = 0.0;
-        for (int i=0; i<tipoProducto.length; i++) {
-            Producto producto = tipoProducto[i];
-            total = total + producto.getPrecio();
+        for (int i=0; i<cantProducto; i++) {
+            total = total + tipoProducto[i].getPrecio();
         }
-        System.out.println("Importe Total: "+total);
         return total;
     }
 }

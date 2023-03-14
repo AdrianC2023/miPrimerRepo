@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Persona persona1 = new Persona("Adrian","Colque", 31);
+        Persona persona1 = new Persona("Adrian","Colque",LocalDate.of(1991,11,9));
 
         Carrito carrito1 = new Carrito(persona1);
 

@@ -5,14 +5,14 @@ public class Persona {
 //Atributos
     private String nombre;
     private String apellido;
-    //private LocalDate fechaDeNacimiento;
-    private int anios;
+    private LocalDate fechaDeNacimiento;
+    //rivate int fechaDeNacimiento;
 
 //Constructor
-    public Persona(String nombre, String apellido, int anios) {
+    public Persona(String nombre, String apellido, LocalDate fechaDeNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.anios = anios;
+        this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
 //Metodos
@@ -23,6 +23,6 @@ public class Persona {
         return this.apellido;
     }
     public int getFechaDeNacimiento() {
-        return anios;
+        return fechaDeNacimiento;
     }
 }
