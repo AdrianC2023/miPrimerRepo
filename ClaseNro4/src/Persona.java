@@ -1,6 +1,3 @@
-import com.sun.nio.sctp.PeerAddressChangeNotification;
-
-import java.security.PublicKey;
 import java.time.LocalDate;
 
 public class Persona {
@@ -8,13 +5,14 @@ public class Persona {
 //Atributos
     private String nombre;
     private String apellido;
-    private LocalDate fechaDeNacimiento;
+    //private LocalDate fechaDeNacimiento;
+    private int anios;
 
 //Constructor
-    public Persona(String nombre, String apellido, LocalDate fechaDeNacimiento) {
+    public Persona(String nombre, String apellido, int anios) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.fechaDeNacimiento = fechaDeNacimiento;
+        this.anios = anios;
     }
 
 //Metodos
@@ -24,7 +22,7 @@ public class Persona {
     public String getApellido(){
         return this.apellido;
     }
-    public LocalDate getFechaDeNacimiento() {
-        return fechaDeNacimiento;
+    public int getFechaDeNacimiento() {
+        return anios;
     }
 }
