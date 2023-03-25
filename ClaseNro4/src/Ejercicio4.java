@@ -1,9 +1,6 @@
-import java.net.SocketOption;
-import java.sql.SQLOutput;
 import java.time.LocalDate;
-import java.util.Scanner;
 
-public class Main {
+public class Ejercicio4 {
     public static void main(String[] args) {
 
         Persona persona1 = new Persona("Adrian","Colque",LocalDate.of(1991,11,9));

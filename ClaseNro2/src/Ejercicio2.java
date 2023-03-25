@@ -1,8 +1,6 @@
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class Ejercicio2 {
 
     public static void main(String[] args) {
 
