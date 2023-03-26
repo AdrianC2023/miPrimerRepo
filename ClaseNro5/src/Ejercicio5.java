@@ -9,40 +9,40 @@ import java.util.*;
 public class Ejercicio5{
     public static void main(String[] args) throws IOException {
 
-        System.out.println("<<<Ejercicio 2>>>\n");
-        System.out.println(args.length);
+        System.out.println("<<<Ejercicio 2>>>");
+        //System.out.println(args.length);
         //List<String> nros;
 
-        for (int i = 0; i < args.length; i++) {
+        /*for (int i = 0; i < args.length; i++) {
             System.out.println("hola");
             System.out.println(args[0]);
-        }
+        }*/
         String unArch = "./ClaseNro5/recursos/numeros.txt";
         String cadena = null;
         for (String linea : Files.readAllLines(Paths.get(unArch))) {
-            System.out.println(linea);
+            //System.out.println(linea);
             cadena = linea;
-            System.out.println(cadena);
+            System.out.println("Numeros del archivo: "+cadena);
         }
-        System.out.println(cadena);
+        //System.out.println(cadena);
         int acu=0;
         int multi=1;
         for (String j : cadena.split(",")){
             int n = Integer.parseInt(j);
-            System.out.println(n);
+            //System.out.println(n);
             acu=acu+n;
             multi=multi*n;
         }
         //System.out.println("suma: "+acu);
         //System.out.println("multiplicacion: "+multi);
 
-        /*System.out.println("Elija una opcion: ");
         System.out.println("1 - Mostrar suma ");
-        System.out.println("2 - Mostrar multiplicaion \n");
+        System.out.println("2 - Mostrar multiplicacion ");
+        System.out.print("Elija una opcion: ");
 
-        Scanner reader = new Scanner(System.in);
+        Scanner r = new Scanner(System.in);
         int opc;
-        opc = reader.nextInt();
+        opc = r.nextInt();
         switch (opc) {
             case 1:
                 System.out.println("suma: "+acu);
@@ -51,7 +51,7 @@ public class Ejercicio5{
                 System.out.println("multiplicacion: "+multi);
                 break;
             default:
-        }*/
+        }
 
         //String mensaje;// = "cara y cruz";
         String dicc = "abcdefghijklmnopqrstuvwxyz ";
