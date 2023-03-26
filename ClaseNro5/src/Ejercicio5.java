@@ -9,6 +9,7 @@ import java.util.*;
 public class Ejercicio5{
     public static void main(String[] args) throws IOException {
 
+        System.out.println("<<<Ejercicio 2>>>\n");
         System.out.println(args.length);
         //List<String> nros;
 
@@ -59,17 +60,17 @@ public class Ejercicio5{
         char[] d = dicc.toCharArray();
         char[] cif = cifrado.toCharArray();
 
-        String mensaje1 = "ectcb betwa";
-        String dicc1 = "abcdefghijklmnopqrstuvwxyz ";
-        String cifrado1 = "";
-        char[] let1 = mensaje1.toCharArray();
-        char[] d1 = dicc1.toCharArray();
-        char[] cif1 = cifrado1.toCharArray();
-        System.out.print("<<<Ejercicio 2>>>\n");
+        String mensaje2 = "ectcb betwa";
+        String dicc2 = "abcdefghijklmnopqrstuvwxyz ";
+        String cifrado2 = "           ";
+        char[] let2 = mensaje2.toCharArray();
+        char[] d2 = dicc2.toCharArray();
+        char[] cif2 = cifrado2.toCharArray();
+        System.out.print("<<<Ejercicio 3>>>\n");
 
-        System.out.println("Elija una opcion: ");
         System.out.println("1 - Codificacion ");
-        System.out.println("2 - Decodificacion \n");
+        System.out.print("2 - Decodificacion \n");
+        System.out.print("Elija una opcion: ");
         Scanner reader1 = new Scanner(System.in);
         int opc1 = reader1.nextInt();
         switch (opc1) {
@@ -78,11 +79,6 @@ public class Ejercicio5{
                 Scanner reader = new Scanner(System.in);
                 int desp = reader.nextInt();
                 int pos;
-                int posLim = dicc.length() - desp - 1;
-                int rango = dicc.length() - 1 - posLim;
-                System.out.println("Posicion limite: " + posLim + " >>> " + d[posLim]);
-                System.out.println("Rango de problema: " + rango);
-
                 for (int i = 0; i < mensaje.length(); i++) {
                     for (int j = 0; j < dicc.length(); j++) {
                         if (let[i] == d[j]) {
@@ -94,11 +90,10 @@ public class Ejercicio5{
                                         cif[i] = d[desp-1]; //2-1
                                     }
                                 }
-                                //System.out.println("seguir pensando");
                             }else {
                                 pos = j + desp;
                                 cif[i] = d[pos];
-                                System.out.println("posicion letra: " + j + " " + d[j] + " to " + cif[i]);
+                                //System.out.println("posicion letra: " + j + " " + d[j] + " to " + cif[i]);
                             }
                         }
                     }
@@ -108,29 +103,32 @@ public class Ejercicio5{
                 System.out.print("Mensaje codificado: " + mensajeCifrado + "\n");
                 break;
             case 2:
-                int pos1,p;
-                for (int i = 0; i < mensaje1.length(); i++) {
-                    for (int j = 0; j < dicc1.length(); j++) {
-                        if (let1[i] == d1[j]) {
-                            if ((let1[i] == 'b') || (let1[i] == 'a')) {
-                                if (let1[i] == 'b') {
-                                    cif1[i] = d1[26];
-                                    //System.out.println("<"+d1[26]+">");
+                System.out.print("Ingrese desplazamiento: ");
+                Scanner reader2 = new Scanner(System.in);
+                int desp2 = reader2.nextInt();
+                int pos2;
+                for (int i = 0; i < mensaje.length(); i++) {
+                    for (int j = 0; j < dicc2.length(); j++) {
+                        if (let2[i] == d2[j]) {
+                            if ((let2[i] == 'a') || (j-desp2<0)) {
+                                if (j-desp2<0){
+                                    cif2[i] = d2[j-desp2+dicc.length()];
                                 } else {
-                                    cif1[i] = d1[25];
+                                    if (let2[i] == 'a'){
+                                        cif2[i] = d2[dicc2.length()-desp2];
+                                    }
                                 }
-                            } else {
-                                //p=j;
-                                //System.out.println("posicion "+p);
-                                pos1 = j - 2;
-                                cif1[i] = d1[pos1];
+                            }else {
+                                pos2 = j - desp2;
+                                cif2[i] = d2[pos2];
+                                //System.out.println("posicion letra: " + j + " " + d2[j] + " to " + cif[i]);
                             }
                         }
                     }
                 }
-                System.out.println("Mensaje: "+mensaje1);
-                String mensajeCifrado1 = new String(cif1);
-                System.out.print("Mensaje decodificado: "+mensajeCifrado1+"\n");
+                System.out.println("Mensaje: " + mensaje2);
+                String mensajeCifrado2 = new String(cif2);
+                System.out.print("Mensaje codificado: " + mensajeCifrado2 + "\n");
                 break;
             default:
         }
