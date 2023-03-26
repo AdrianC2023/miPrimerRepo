@@ -53,19 +53,19 @@ public class Ejercicio5{
             default:
         }*/
 
-        String mensaje = "cara y cruz";
+        //String mensaje;// = "cara y cruz";
         String dicc = "abcdefghijklmnopqrstuvwxyz ";
-        String cifrado = "           ";
-        char[] let = mensaje.toCharArray();
+        //String cifrado = "           ";
+        //char[] let = mensaje.toCharArray();
         char[] d = dicc.toCharArray();
-        char[] cif = cifrado.toCharArray();
+        //char[] cif = cifrado.toCharArray();
 
-        String mensaje2 = "ectcb betwa";
+        //String mensaje2 = "ectcb betwa";
         String dicc2 = "abcdefghijklmnopqrstuvwxyz ";
-        String cifrado2 = "           ";
-        char[] let2 = mensaje2.toCharArray();
+        //String cifrado2 = "           ";
+        //char[] let2 = mensaje2.toCharArray();
         char[] d2 = dicc2.toCharArray();
-        char[] cif2 = cifrado2.toCharArray();
+        //char[] cif2 = cifrado2.toCharArray();
         System.out.print("<<<Ejercicio 3>>>\n");
 
         System.out.println("1 - Codificacion ");
@@ -78,6 +78,18 @@ public class Ejercicio5{
                 System.out.print("Ingrese desplazamiento: ");
                 Scanner reader = new Scanner(System.in);
                 int desp = reader.nextInt();
+                String archIn = "./ClaseNro5/recursos/entrada.txt";
+                String mensaje = null;
+                String cifrado = "           ";
+
+                for (String linea : Files.readAllLines(Paths.get(archIn))) {
+                    //System.out.println(linea);
+                    System.out.println("Mensaje del archivo de entrada: "+(mensaje = linea));
+                    //System.out.println(mensaje);
+                }
+                char[] let = mensaje.toCharArray();
+                char[] cif = cifrado.toCharArray();
+
                 int pos;
                 for (int i = 0; i < mensaje.length(); i++) {
                     for (int j = 0; j < dicc.length(); j++) {
@@ -98,16 +110,36 @@ public class Ejercicio5{
                         }
                     }
                 }
-                System.out.println("Mensaje: " + mensaje);
                 String mensajeCifrado = new String(cif);
-                System.out.print("Mensaje codificado: " + mensajeCifrado + "\n");
+                Files.writeString(Paths.get("./ClaseNro5/recursos/salida.txt"),mensajeCifrado);
+                String archOut = "./ClaseNro5/recursos/salida.txt";
+
+                for (String linea : Files.readAllLines(Paths.get(archOut))) {
+                    System.out.println("Mensaje del archivo de salida: "+(mensajeCifrado));
+                }
+                //System.out.println("Mensaje: " + mensaje);
+                //String mensajeCifrado = new String(cif);
+                //System.out.print("Mensaje codificado: " + mensajeCifrado + "\n");
                 break;
             case 2:
                 System.out.print("Ingrese desplazamiento: ");
                 Scanner reader2 = new Scanner(System.in);
                 int desp2 = reader2.nextInt();
+                String archOut2 = "./ClaseNro5/recursos/salida.txt";
+                String mensaje2 = "           ";
+                String cifrado2 = "           ";
+
+                for (String linea : Files.readAllLines(Paths.get(archOut2))) {
+                    //System.out.println(linea);
+                    System.out.println("Mensaje del archivo de salida: "+(mensaje2 = linea));
+                    //System.out.println(mensaje);
+                }
+
+                char[] let2 = mensaje2.toCharArray();
+                char[] cif2 = cifrado2.toCharArray();
+
                 int pos2;
-                for (int i = 0; i < mensaje.length(); i++) {
+                for (int i = 0; i < mensaje2.length(); i++) {
                     for (int j = 0; j < dicc2.length(); j++) {
                         if (let2[i] == d2[j]) {
                             if ((let2[i] == 'a') || (j-desp2<0)) {
@@ -126,9 +158,16 @@ public class Ejercicio5{
                         }
                     }
                 }
-                System.out.println("Mensaje: " + mensaje2);
                 String mensajeCifrado2 = new String(cif2);
-                System.out.print("Mensaje codificado: " + mensajeCifrado2 + "\n");
+                Files.writeString(Paths.get("./ClaseNro5/recursos/entrada.txt"),mensajeCifrado2);
+                String archIn2 = "./ClaseNro5/recursos/entrada.txt";
+
+                for (String linea : Files.readAllLines(Paths.get(archIn2))) {
+                    System.out.println("Mensaje del archivo de entrada: "+(mensajeCifrado2));
+                }
+                //System.out.println("Mensaje: " + mensaje2);
+                //String mensajeCifrado2 = new String(cif2);
+                //System.out.print("Mensaje codificado: " + mensajeCifrado2 + "\n");
                 break;
             default:
         }
