@@ -5,7 +5,7 @@ public class Carrito {
 
 //Atributos
     private Persona persona;
-    private Producto[] tipoProducto;
+    private Producto tipoProducto[];
     //private Double total;
     private int cantProducto;
 
@@ -21,6 +21,7 @@ public class Carrito {
     public Persona getPersona() {
         return persona;
     }
+
     public boolean agregarProducto(Producto producto) {
         if (cantProducto < 3) {
             tipoProducto[cantProducto] = producto;

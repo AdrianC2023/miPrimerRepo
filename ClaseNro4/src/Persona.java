@@ -22,7 +22,7 @@ public class Persona {
     public String getApellido(){
         return this.apellido;
     }
-    public int getFechaDeNacimiento() {
-        return fechaDeNacimiento;
-    }
+    //public int getFechaDeNacimiento() {
+        //return fechaDeNacimiento;
+    //}
 }
