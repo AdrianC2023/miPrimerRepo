@@ -23,14 +23,16 @@ public class Ejercicio6 {
         System.out.println("productos: "+carrito1.getTipoProducto(0));
         System.out.println("productos: "+carrito1.getTipoProducto(1));
         System.out.println("productos: "+carrito1.getTipoProducto(2));
-
         //System.out.println("Producto:"+producto1.getNombre()+"\nPrecio: "+producto1.getPrecio()+"\nTiene descuento? "+producto1.getDescPorc());
-        double  imp = carrito1.importeTotal();
-        System.out.println("Importe total: "+imp);
 
-        Descuento dtoP = new DescuentoPorcentaje(0.25);
-        Descuento dtoF = new DescuentoFijo(150.0);
+        System.out.println("El importe total: "+carrito1.importeTotal());
 
-        double DP = dtoP.getDesc();
+        Descuento desc1 = new DescuentoFijo();
+        desc1.setDesc(14.0);
+        System.out.println(desc1.calcularDescuento(carrito1.importeTotal()));
+
+        Descuento desc2 = new DescuentoPorcentaje();
+        desc2.setDesc(0.3);
+        System.out.println(desc2.calcularDescuento(carrito1.importeTotal()));
     }
 }

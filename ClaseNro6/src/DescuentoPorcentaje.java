@@ -4,14 +4,15 @@ public class DescuentoPorcentaje extends Descuento {
     private double porcentaje;
 
     //Costructor
-    public DescuentoPorcentaje(double porcentaje) {
+    /*public DescuentoPorcentaje(double porcentaje) {
         this.porcentaje = porcentaje;
-        calcularDescuento();
-    }
+        //calcularDescuento();
+    }*/
 
     //Metodos
     @Override
-    protected void calcularDescuento() {
-        desc=(porcentaje);
+    //por que es public y no potected?
+    public double calcularDescuento(double importe) {
+        return importe-(importe*this.getDesc());
     }
 }

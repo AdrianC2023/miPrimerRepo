@@ -4,10 +4,15 @@ public abstract class Descuento {
     protected double desc;
     //Contrsuctor
 
-    //Metodos get
+    //Metodos set y get
     public double getDesc() {
         return desc;
     }
+    public void setDesc(double desc) {
+        this.desc = desc;
+    }
+
     //Metodos Abstractos
-    protected abstract void calcularDescuento();
+    //por que es public y no potected?
+    public abstract double calcularDescuento(double importe);
 }

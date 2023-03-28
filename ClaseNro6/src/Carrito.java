@@ -32,15 +32,9 @@ public class Carrito {
         for (int i=0; i<cantProducto; i++) {
             total = total + tipoProducto[i].getPrecio();
         }
+        //return total;
         return total;
     }
-
-    /*public Producto[] getTipoProducto(Producto prod[]) {
-        for(int i=0; i<cantProducto; i++) {
-            prod[i] = tipoProducto[i];
-        }
-        return prod;
-    }*/
 
     public Producto getTipoProducto(int j) {
         return tipoProducto[j];
