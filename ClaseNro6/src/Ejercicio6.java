@@ -7,14 +7,30 @@ public class Ejercicio6 {
 
         Carrito carrito1 = new Carrito(persona1);
 
-        Producto producto1 = new Producto("Jabon en polvo",40.0);
-        Producto producto2 = new Producto("Esponja", 10.0);
-        Producto producto3 = new Producto("Chocolaes", 100.0);
+        Producto producto1 = new Producto("Jabon en polvo",40.0, true, false);
+        Producto producto2 = new Producto("Esponja", 10.0, false, true);
+        Producto producto3 = new Producto("Chocolaes", 100.0, false, false);
 
         carrito1.agregarProducto(producto1);
         carrito1.agregarProducto(producto2);
         carrito1.agregarProducto(producto3);
 
-        System.out.println("Importe total: "+carrito1.importeTotal());
+        //Por que no muestra los productos con los valores?
+        /*System.out.println("Producto: "+carrito1.getTipoProducto(producto1));
+        System.out.println("Producto: "+carrito1.getTipoProducto(producto2));
+        System.out.println("Producto: "+carrito1.getTipoProducto(producto3));*/
+
+        System.out.println("productos: "+carrito1.getTipoProducto(0));
+        System.out.println("productos: "+carrito1.getTipoProducto(1));
+        System.out.println("productos: "+carrito1.getTipoProducto(2));
+
+        //System.out.println("Producto:"+producto1.getNombre()+"\nPrecio: "+producto1.getPrecio()+"\nTiene descuento? "+producto1.getDescPorc());
+        double  imp = carrito1.importeTotal();
+        System.out.println("Importe total: "+imp);
+
+        Descuento dtoP = new DescuentoPorcentaje(0.25);
+        Descuento dtoF = new DescuentoFijo(150.0);
+
+        double DP = dtoP.getDesc();
     }
 }
